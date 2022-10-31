@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=Noto+Sans+Avestan&family=Oswald&family=Poppins&family=Roboto+Mono:wght@500&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.body{
+    /* height: 1000%; */
+    overflow-y: hidden;
+
+}
+.header{
+    position: relative;
+    height: 110px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    background-color: #28104e;
+
+}
+.header img{
+    margin-left: 5%;
+    width: 200px;
+}
+.header i{
+    position: absolute;
+    left: 21%;
+    color: #fff;
+}
+.header #search{
+    color: #fff;
+}
+.header input{
+    position: fixed;
+    left: 20%;
+    height: 45px;
+    width: 40%;
+    color: #fff;
+    border: #fff 3px solid;
+    padding-left: 50px;
+    border-radius: 10px;
+    background: none;
+}
+.header input::placeholder{
+    color: #fff;
+    font-weight: 100;
+    padding-left: 7px;
+}
+
+.ikon .cart-logo {
+    position: absolute;
+    right: 35%;
+}
+.ikon .lope-logo {
+    position: absolute;
+    right: 30%;
+}
+.ikon .lope-logo i:hover, .cart-logo i:hover{
+    color: #9754cb;
+}
+
+/* tombol login-register */
+.button-header .log  {
+    position: absolute;
+    right: 13%;
+    top: 30%;
+    padding: 10px 26px;
+    border: #deacf5 3px solid;
+    border-radius: 10px 0px 0px 10px;
+    background-color: transparent;
+}
+.button-header .reg  {
+    position: absolute;
+    right: 8.5%;
+    top: 30%;
+    padding: 10px 20px;
+    background-color: #deacf5;
+    border-radius: 0px 10px 10px 0px;
+    border: #deacf5 3px solid;
+}
+.button-header .log a{
+    text-decoration: none;
+    color: #deacf5;
+}
+.button-header .log:hover{
+    background-color: #9754cb;
+    border: #deacf5 3px solid;
+    transform: translateY(3px);
+    box-shadow: 0px 10px 40px rgba(191, 141, 214 2%);
+    transition: all 0.2s;
+
+}
+.button-header .reg a{
+    text-decoration: none;
+    color: #28104e;
+}
+.button-header .reg:hover{
+    background-color: #9754cb;
+    border: #9754cb 3px solid;
+    transform: translateY(3px);
+    box-shadow: 0px 10px 40px rgba(191, 141, 214 2%);
+    transition: all 0.2s;
+
+}
+
+/* hamburger menu */
+.hamburger_menu{
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: absolute;
+    margin-left: 85%;
+}
+.hamburger_menu span{
+    background-color: #deacf5;
+    display: block;
+    flex-direction: column;
+    position: relative;
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+.hamburger_menu #input{
+   position: absolute;
+   width: 28px;
+   height: 25px;
+   opacity: 0;
+}
+/* animasi hamburger_menu*/
+.hamburger_menu span:nth-child(2){
+    transform-origin: 0 0;
+}
+.hamburger_menu span:nth-child(4){
+    transform-origin: 0 100%;
+}
+.hamburger_menu input:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(3px, -2px);
+}
+.hamburger_menu input:checked ~ span:nth-child(3){
+    transform: translatex(-50px);
+    opacity: 0;
+}
+.hamburger_menu input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg) translate(1px, 4px);
+}
+
+.menu{
+    background-color: #9754cb;
+    height: 40vh;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    list-style: none;
+    border-radius: 0px 0px 20px 20px ;
+    justify-content: center;
+    z-index: 100;
+    transform: translateY(100%);
+    transition: all 1s;
+    display: none;
+}
+
+.menu a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+    margin-left: 5%;
+}
+.showMenu{
+    list-style: none;
+    background-color: #deacf5;
+    height: 40vh;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-radius:30px 30px 0px 0px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 100;
+    transition: all 1s ease-in-out;
+    transform: translateY(-1%);
+}
+
+
+/* kategori */
+.kategori {
+    display: grid;
+    grid-auto-flow: column;
+    scroll-behavior: auto;
+    gap: 4%;
+    align-items: center;
+    overflow-y: auto;
+    overscroll-behavior: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: mandatory;
+    scrollbar-width: none;
+    padding: 3%;
+    -ms-overflow-style: none;
+}
+.kategori::-webkit-scrollbar{
+    display: none;
+}
+.kategori article{
+    border: #28104e 3px solid;
+    border-radius: 10px;
+    padding: 12px 6px 12px 30px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+    position: relative;
+}
+.kategori article a{
+    display: flex;
+    text-decoration: none;
+    color: #28104e;
+    font-size: 15px;
+}
+.kategori article img{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 10px;
+    top: 7px;
+}
+
+article:hover{
+    background-color: #deacf5;
+    width: 53%;
+    transition: all 0.3s;
+    box-shadow: 0px 10px 40px rgba(191, 141, 214 20%);
+    transform: translatey(5px);
+}
+
+.left-nav nav{
+    display: none;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 75px;
+    z-index: 99;
+    background-color: #28104e;
+}
+
+.left-nav nav ul{
+    display: inline-flex;
+    list-style: none;
+    position: absolute;
+    left: 19%;
+    gap: 400%;
+}
+
+.left-nav nav ul li a{
+    color: #fff;
+    text-decoration: none;
+ 
+}
+.left-nav nav ul li a:hover{
+    color: #deacf5;
+}
+@media screen and (max-width: 700px){
+    .header input{
+        height: 35px;
+        width: 55%;
+        left: 5%;
+    }
+    .header img{
+        display: none;
+    }
+    .header i{
+        left: 7%;
+    }
+    .ikon .lope-logo, .cart-logo{
+        top: 39%;
+    }
+    .button-header .log {
+        font-size: 10px;
+        padding: 5px 13px;
+        right: 10.5%;
+        top: 37%;
+    }
+    .button-header .reg{
+        padding: 5px;
+        font-size: 10px;
+        right: 3%;
+        top: 37%;
+    }
+    .left-nav nav{
+       height: 60px;
+    }
+    .left-nav nav ul{
+        gap: 150%;
+        left: 30%;
+    }
+    .left-nav nav ul li a{
+        font-size: 18px;
+        font-weight: 300;
+    }
+    
+}
+@media screen and (max-width: 600px){
+    .header input {
+        left: 30%;
+        width: 65%;
+    }
+    .left-nav nav ul{
+        left: 27%;
+    }
+}
+@media screen and (max-width: 450px) {
+    .header{
+        height: 90px;
+        position: sticky;
+        box-sizing: border-box;
+    }
+    .header img{
+        display: none;
+    }
+    .kategori article img{
+        top: 8px;
+    }
+    .hamburger_menu{
+        display: flex;
+    }
+    .header i {
+        left: 11%;
+    }
+    .header input{
+        left: 5%;
+        width: 65%;
+    }
+    .header .ikon{
+        display: none;
+    }
+    .button-header .reg, .log{
+        display: none;
+    }
+    .menu{
+        display: flex;
+        overflow: hidden;
+    }
+    .kategori article {
+        width: 95px;
+    }
+    .left-nav nav{
+        justify-content: center;
+        display: flex;
+    }
+    .left-nav nav ul{
+        left: 13%;
+        gap: 85%;
+    }
+    .left-nav nav ul li a{
+        font-size: 18px;
+        font-weight: 300;
+    }
+} 
