@@ -5,28 +5,78 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Righteous&family=Secular+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+            fontFamily: {
+                Rt : 'Righteous',
+                popins: 'Poppins',
+                SO : 'Secular One'
+            },
+                backgroundImage: {
+            'ungu': "url('/img/login-bg.png')",
+            'fluid':"url('/img/fluid.png')",
+            'lock': "url('/img/icons8-lock-50.png')"
+        }
+        }
+      }
+    }
+  </script>
+
 </head>
-<body>
-    <!-- <nav>
-        <img src="../img/logo-title.png" alt="">
-    </nav> -->
-    <div class="login">
-        <div class="log-img">
-            <img src="./../img/YL_1666488627140-removebg-preview.png" alt="">
+<body class="font-popins">
+    <!-- container -->
+    <div class="">
+      <a href="./../homepage/index.html">
+        <img src="./../img/icons8-go-back-64.png" alt="" class="w-[35px] m-8">
+      </a>
+        <div class="" >
+            <h1 class="text-5xl text-[#28104e] font-SO mt-[120px] ml-28">Selamat datang kembali!!</h1>
+            <h3 class=" ml-28 mt-9">Silahkan masuk ke akun anda</h3>
+            <!-- image -->
+            <img src="./../img/Login-amico.png" alt="" class=" w-[25%] absolute left-[20%] top-[36%]">
         </div>
-    <form action="" method="post">
-        <h1>Login</h1>
-        <input type="email" name="email" id="email" placeholder="email" autocomplete="off">
-        <input type="password" name="password" id="password"placeholder="password"  autocomplete="off">
-        <button type="submit" name="submit" value="Login">
+        <!-- form -->
+    <form action="" method="post" class="flex flex-col w-[30%] gap-[15px] justify-center absolute right-[0%] top-[0%] bottom-[0%] p-[5%] rounded-[ 0px 32px 32px 0px] bg-[#f4f4f8] ">
+        <!-- Logn title -->
+        <h1 class="font-Rt text-center mt-[5%] mb-[5%] text-[55px]">Login</h1>
+
+        <!-- email -->
+        <input type="email" name="email" id="email" placeholder="email" autocomplete="off" class=" border-2 border-[#fff] w-[99%] p-[3%] m-[7px] rounded-[8px] bg-none  focus:outline-none focus:border-[#9754cb] focus:border-2 invalid:text-red-500 focus:invalid:border-red-500">
+        <!-- password -->
+        <div class="flex relative group">
+            <input type="password" name="password" id="pwd" placeholder="password"  autocomplete="off" class="border-2 border-[#fff] w-[99%] mr-[-1%] p-[3%] m-[7px] rounded-[8px] bg-none outline-none focus:border-[#9754cb] focus:border-2">
+            <img src="./../img/icons8-eye-24.png" alt="" id="lock" class="z-[2] w-[24px] absolute right-[4%] top-5 opacity-1 group-focus:opacity-0" >
+            <input type="checkbox" onclick="hideAndShow()" class=" opacity-0 absolute w-[30px] h-[30px] bg-lock right-[5%] top-4 z-30">
+        </div>
+        <!-- Submit button -->
+        <button type="submit" name="submit" value="Login" class=" w-[30%] p-[2%] rounded-[20px] border-none bg-[#28104e] absolute left-[18%] bottom-[25%] text-[17px] text-[#deacf5] font-medium cursor-pointer hover:bg-[#deacf5] hover:text-[#28104e] hover:shadow-lg hover:shadow-violet-300">
          Login
         </button>
-        <h4>Belum punya akun? <a href="../register/register.php" target="_self"> Sing Up</a></h4>
+
+        <!-- switch to registe page -->
+        <h4 class="flex justify-center relative bottom-[-33%] font-semibold">Belum punya akun? <a href="../register/register.php" target="_self" class="underline font-light ml-2"> Sing Up</a></h4>
     </form>
 
    
 
     </div>
+
+    <script>
+       function hideAndShow() {
+        var hide = document.getElementById("pwd");
+        if (hide.type === "password") {
+            hide.type = "text";
+        }else{
+            hide.type = "password";
+        }
+       }
+    </script>
 </body>
 </html>
