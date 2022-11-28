@@ -32,7 +32,7 @@
 </head>
 <body class="font-popins">
     <!-- container -->
-    <div class="">
+    <div class="container">
       <a href="./../homepage/index.html">
         <img src="./../img/icons8-go-back-64.png" alt="" class="w-[35px] m-8">
       </a>
@@ -43,25 +43,28 @@
             <img src="./../img/Login-amico.png" alt="" class=" w-[25%] absolute left-[20%] top-[36%]">
         </div>
         <!-- form -->
-    <form action="" method="post" class="flex flex-col w-[30%] gap-[15px] justify-center absolute right-[0%] top-[0%] bottom-[0%] p-[5%] rounded-[ 0px 32px 32px 0px] bg-[#f4f4f8] ">
+    <form action="" method="post" class="flex flex-col w-full p-16 gap-[15px] justify-center absolute right-[0%] top-[0%] bottom-[0%] rounded-[ 0px 32px 32px 0px] bg-[#f4f4f8] ">
         <!-- Logn title -->
-        <h1 class="font-Rt text-center mt-[5%] mb-[5%] text-[55px]">Login</h1>
+        <h1 class="font-Rt text-center mt-[5%] mb-[5%] text-4xl">Login</h1>
 
         <!-- email -->
-        <input type="email" name="email" id="email" placeholder="email" autocomplete="off" class=" border-2 border-[#fff] w-[99%] p-[3%] m-[7px] rounded-[8px] bg-none  focus:outline-none focus:border-[#9754cb] focus:border-2 invalid:text-red-500 focus:invalid:border-red-500">
+        <div class="group">
+        <input type="email" name="email" id="email" placeholder="email" autocomplete="off" class=" border-2 border-[#fff] w-[99%] p-[3%] m-[4px] rounded-[8px] bg-none  focus:outline-none focus:border-[#9754cb] focus:border-2 invalid:text-red-500 focus:invalid:border-red-500 peer">
+            <p class="mx-3 my-1 text-sm text-red-500 invisible peer-invalid:visible">Email invalid </p>
+        </div>
         <!-- password -->
         <div class="flex relative group">
-            <input type="password" name="password" id="pwd" placeholder="password"  autocomplete="off" class="border-2 border-[#fff] w-[99%] mr-[-1%] p-[3%] m-[7px] rounded-[8px] bg-none outline-none focus:border-[#9754cb] focus:border-2">
-            <img src="./../img/icons8-eye-24.png" alt="" id="lock" class="z-[2] w-[24px] absolute right-[4%] top-5 opacity-1 group-focus:opacity-0" >
+            <input type="password" name="password" id="pwd" placeholder="password"  autocomplete="off" class="border-2 border-[#fff] w-[99%] mr-[-1%] p-[3%] m-[4px] rounded-[8px] bg-none outline-none focus:border-[#9754cb] focus:border-2 peer">
+            <img src="./../img/icons8-eye-24.png" alt="" id="lock" class="z-[2] w-[24px] absolute right-[4%] top-5 invisible peer-focus:visible" >
             <input type="checkbox" onclick="hideAndShow()" class=" opacity-0 absolute w-[30px] h-[30px] bg-lock right-[5%] top-4 z-30">
         </div>
         <!-- Submit button -->
-        <button type="submit" name="submit" value="Login" class=" w-[30%] p-[2%] rounded-[20px] border-none bg-[#28104e] absolute left-[18%] bottom-[25%] text-[17px] text-[#deacf5] font-medium cursor-pointer hover:bg-[#deacf5] hover:text-[#28104e] hover:shadow-lg hover:shadow-violet-300">
+        <button type="submit" name="submit" value="Login" class=" w-[35%] p-[2%] rounded-[20px] border-none bg-[#28104e] relative left-1 top-6 text-[17px] text-[#deacf5] font-medium cursor-pointer hover:bg-[#deacf5] hover:text-[#28104e] hover:shadow-lg hover:shadow-violet-200">
          Login
         </button>
 
         <!-- switch to registe page -->
-        <h4 class="flex justify-center relative bottom-[-33%] font-semibold">Belum punya akun? <a href="../register/register.php" target="_self" class="underline font-light ml-2"> Sing Up</a></h4>
+        <h4 class="flex justify-center relative -bottom-40 font-semibold">Belum punya akun? <a href="../register/register.php" target="_self" class="underline font-light ml-2"> Sing Up</a></h4>
     </form>
 
    
