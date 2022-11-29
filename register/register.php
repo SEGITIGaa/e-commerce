@@ -1,5 +1,5 @@
 
-<?php
+        <?php
             $conn = mysqli_connect('localhost','root','','ecommerce');
             if (isset($_POST['submit'])) {
                 $username = htmlspecialchars( mysqli_real_escape_string($conn,$_POST['username']));
@@ -68,51 +68,53 @@
 <body>
         
     
-        <a href="../login/login.html">
+        <a href="./../login/login.html">
            <img src="./../img/icons8-go-back-64.png" alt="" class="w-[35px] m-8">
         </a>
 
         <h1 class="text-5xl text-u400 font-SO mt-32 ml-28 ">Selamat datang di Tokonuaing!!</h1>
         <p class=" ml-28 mt-9">E-commerce ter the best di Jawa</p>
-    <img src="./../img/Tablet login-amico.png" alt="" class="w-[25%] absolute left-[20%] top-[36%]">
+    <img src="./../img/Tablet login-amico.png" alt="" class="w-1/4 absolute left-1/4 top-1/3">
     <!-- container -->
-    <div class="absolute right-0 top-0 bottom-0 w-[30%] p-4 bg-pth200 flex items-center">
-       <div class="w-full">
-            <h1 class="font-Rt flex justify-center mb-4 text-4xl   ">
-                Sign Up
-            </h1>
-            <form action="" method="post" class=" flex flex-col gap-4 w-full p-16" >
-                <!-- usr name -->
-                <input type="text" name="username" id="username" placeholder="username"  required autocomplete="off" 
-                class="border-2 border-white w-full p-3 m-1 rounded-lg 
-                bg-none outline-none focus:border-u200 focus:border-2">
-                <!-- email -->
-                <div class="group h-9 mb-5">
-                    <input type="email" name="email" id="email" placeholder="email" autocomplete="off" class=" border-2 border-white w-full p-3 m-1 rounded-lg bg-none 
-                    focus:outline-none focus:border-u200 focus:border-2 invalid:text-red-500 focus:invalid:border-red-500 peer">
-                        <p class="mx-3 my-1 text-sm text-red-500 invisible peer-invalid:visible">Email invalid </p>
-                    </div>
-                <!-- pass -->
-                <div class="group relative">
-                    <input type="password" name="password" id="pwd" placeholder="password" required autocomplete="off"
-                        class="border-2 border-white w-full p-3 m-1 rounded-lg 
-                        bg-none outline-none focus:border-u200 focus:border-2 peer">
-                    <img src="./../img/icons8-eye-24.png" alt="" id="lock" class="z-[2] w-6 absolute right-4 bottom-4 invisible peer-focus:visible" >
-                        <input type="checkbox" onclick="hideAndShow()" class=" opacity-0 absolute w-[30px] h-[30px] bg-lock right-[5%] top-4 z-30">
-                    </div>
-                    <!-- confirm pass -->
-                    <input type="password" name="conpass" id="conass"placeholder=" confirm password" required autocomplete="off"
-                    class="border-2 border-white w-full p-3 m-1 rounded-lg 
-                    bg-none outline-none focus:border-u200 focus:border-2">
-                    
-                    <!-- button -->
-                    <button type="submit" name="submit" 
-                    class="flex justify-center items-center 
-                    w-[30%] mt-6 py-2 rounded-full bg-u400 text-u100 
-                    hover:bg-u100 hover:text-u400 hover:shadow-lg 
-                    hover:shadow-violet-200">
-                    confirm
-                </button>
+    <div class="absolute right-0 top-0 bottom-0 w-1/4 bg-pth200 flex items-center">
+           
+            <form action="" method="post" class="flex w-full justify-center flex-col p-14 absolute bottom-0 top-0" >
+                <div class="w-full">
+                    <h1 class="font-Rt flex justify-center mb-4 text-4xl   ">
+                        Sign Up
+                </h1>
+               <div class="flex flex-col space-y-6">
+                 <!-- usr name -->
+                 <input type="text" name="username" id="username" placeholder="username"  required autocomplete="off" 
+                 class="border-2 border-white w-full p-3 m-1 rounded-lg 
+                 bg-none outline-none focus:border-u200 focus:border-2">
+                 <!-- email -->
+                 <div class="group h-14">
+                     <input type="email" name="email" id="email" placeholder="email" autocomplete="off" class=" border-2 border-white w-full p-3 m-1 rounded-lg bg-none focus:outline-none focus:border-u200 focus:border-2 invalid:text-red-500 focus:invalid:border-red-500 peer">
+                         <p class="mx-3 my-1 text-xs text-red-500 invisible peer-invalid:visible">Email invalid </p>
+                     </div>
+                 <!-- pass -->
+                 <div class="group">
+                     <input type="password" name="password" id="pwd" placeholder="password" required autocomplete="off"
+                         class="border-2 border-white w-full p-3 m-1 rounded-lg 
+                         bg-none outline-none focus:border-u200 focus:border-2 peer">
+                     <img src="./../img/icons8-eye-24.png" alt="" id="lock" class="z-[2] w-6 absolute right-4 bottom-4 invisible peer-focus:visible" >
+                         <input type="checkbox" onclick="hideAndShow()" class=" opacity-0 absolute w-[30px] h-[30px] bg-lock right-[5%] top-4 z-30">
+                     </div>
+                     <!-- confirm pass -->
+                     <input type="password" name="conpass" id="conass"placeholder=" confirm password" required autocomplete="off"
+                     class="border-2 border-white w-full p-3 m-1 rounded-lg 
+                     bg-none outline-none focus:border-u200 focus:border-2">
+                     
+                     <!-- button -->
+                     <button type="submit" name="submit" 
+                     class="flex justify-center items-center 
+                     w-1/3 mt-6 py-2 rounded-full bg-u400 text-u100 
+                     hover:bg-u100 hover:text-u400 hover:shadow-lg 
+                     hover:shadow-violet-200">
+                     confirm
+                 </button>
+               </div>
             </form>
         </div>
     </div>
