@@ -1,5 +1,5 @@
 
-        <?php
+<?php
             $conn = mysqli_connect('localhost','root','','ecommerce');
             if (isset($_POST['submit'])) {
                 $username = htmlspecialchars( mysqli_real_escape_string($conn,$_POST['username']));
@@ -98,8 +98,8 @@
                      <input type="password" name="password" id="pwd" placeholder="password" required autocomplete="off"
                          class="border-2 border-white w-full p-3 m-1 rounded-lg 
                          bg-none outline-none focus:border-u200 focus:border-2 peer">
-                     <img src="./../img/icons8-eye-24.png" alt="" id="lock" class="z-[2] w-6 absolute right-4 bottom-4 invisible peer-focus:visible" >
-                         <input type="checkbox" onclick="hideAndShow()" class=" opacity-0 absolute w-[30px] h-[30px] bg-lock right-[5%] top-4 z-30">
+                     <img src="./../img/icons8-eye-24.png" alt="" id="lock" class="z-[2] w-6 absolute right-4 -mt-10 mr-12 invisible peer-focus:visible" >
+                         <input type="checkbox" onclick="hideAndShow()" class=" opacity-0 absolute w-[30px] h-[30px] right-4 -mt-10 mr-12 z-30">
                      </div>
                      <!-- confirm pass -->
                      <input type="password" name="conpass" id="conass"placeholder=" confirm password" required autocomplete="off"
