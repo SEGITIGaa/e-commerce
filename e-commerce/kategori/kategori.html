@@ -1,0 +1,78 @@
+
+<?php
+
+require 'fungsi.php';
+session_start();
+
+if( !isset($_SESSION["login"]) ){
+    $_SESSION["login"] = false;
+}
+
+
+$kategori = $_GET["kategori"];
+
+$produk = ambil("SELECT * FROM produk WHERE kategori like '%$kategori%' ");
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kategori</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Righteous&family=Secular+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style type="text/tailwindcss">
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+     <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+                fontFamily: {
+                    Rt : 'Righteous',
+                    popins: 'Poppins',
+                    SO : 'Secular One'
+                },
+                    backgroundImage: {
+                'ungu': "url('/img/login-bg.png')",
+                'fluid':"url('/img/fluid.png')",
+                'lock': "url('/img/icons8-lock-50.png')"
+            },
+                colors: {
+                'deac': '#deacf5',
+                '9754': '#9754cb',
+                '6237': '#6237a0',
+                '2810': '#28104e',
+                'f4f8':'#f4f4f8',
+                'd9': 'd9d9d9'
+            },
+            }
+          }
+        }
+      </script>
+</head>
+<body>
+    <button class="w-9 h-9 m-8 rounded-full hover:bg-deac ">
+        <a href="./../homepage/index.html">
+            <img src="./../img/icons8-go-back-64.png" alt=""class="w-9">
+           </a>
+      </button>
+
+      <form action="" class="flex w-2/5 h-11 items-center">
+        <img src="./../img/icons8-search-30.png" alt="" class="left-56 absolute w-5 ">
+        <input type="search" name="search" placeholder="search" autofocus class=" left-56 w-full h-11 px-12 rounded-lg placeholder:text-2810 placeholder:font-thin placeholder:text-base focus:outline-none focus:border-2 focus:border-deac">
+        <!-- <img src="./../img/icons8-cancel-32.png" alt="" class="relative right-16 w-6"> -->
+    </form>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Righteous&family=Secular+One&display=swap" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style type="text/tailwindcss">
+            *{
+                margin: 0;
+                padding: 0;
+                font-family: 'Poppins', sans-serif;
+            }
+        </style>
+         <script>
+            tailwind.config = {
+              theme: {
+                extend: {
+                    fontFamily: {
+                        Rt : 'Righteous',
+                        popins: 'Poppins',
+                        SO : 'Secular One'
+                    },
+                        backgroundImage: {
+                    'ungu': "url('/img/login-bg.png')",
+                    'fluid':"url('/img/fluid.png')",
+                    'lock': "url('/img/icons8-lock-50.png')"
+                },
+                    colors: {
+                    'deac': '#deacf5',
+                    '9754': '#9754cb',
+                    '6237': '#6237a0',
+                    '2810': '#28104e',
+                    'f4f8':'#f4f4f8',
+                    'd9': 'd9d9d9'
+                },
+                }
+              }
+            }
+          </script>
+</head>
+<body class="bg-d9 ">
+    <!-- navbar -->
+  <button class="w-9 h-9 m-8 rounded-full hover:bg-deac ">
+    <a href="./../homepage/index.html">
+        <img src="./../img/icons8-go-back-64.png" alt=""class="w-9">
+       </a>
+  </button>
+
+   <!-- card -->
+   <div class="bg-f4f8 w-2/3 h-44 mx-auto rounded-xl flex p-4 items-center cursor-pointer">
+    <img src="./../img/durek.jfif" alt="" class="w-40 rounded-lg">
+    <div class="mx-8">
+        <h3 class="text-2xl font-semibold text-slate-800">Permen mint</h3>
+        <h5 class="text-slate-600 mb-6">deskripsi produk</h5>
+        <h5 class="text-slate-800 ">12.000</h5>
+    </div>
+    <button class="flex items-center absolute right-96 mt-20 h-8 border-2 border-2810 rounded-full hover:bg-deac px-6 py-3">
+        <img src="./../img/icons8-remove-50.png" alt="" class="w-5">remove
+    </button>
+   </div>
+
+   <!-- total harga -->
+  <div class="h-32 flex items-center space-x-96 justify-center fixed bottom-0 left-0 right-0 bg-f4f8 ">
+    <div class="font-thin text-3xl flex flex-col py-3">
+        <h4 class="font-semibold my-2">Total price :</h4>
+        <h5 class="text-2xl text-center">1.200</h5>
+    </div>
+    <button type="submit" class="py-3 px-10 bg-deac rounded-full font-semibold text-slate-900 hover:text-deac hover:bg-9754 hover:shadow-md hover:shadow-9754"> Buy</button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=Noto+Sans+Avestan&family=Oswald&family=Poppins&family=Roboto+Mono:wght@500&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.body{
+    /* height: 1000%; */
+    overflow-y: hidden;
+
+}
+.header{
+    position: fixed;
+    height: 110px;
+    width: 100%;
+    right: 0;
+    display: flex;
+    align-items: center;
+    background-color: #f4f4f8;
+    z-index: 2;
+}
+.header img{
+    margin-left: 5%;
+    width: 200px;
+}
+.header .search{
+    position: absolute;
+    left: 16%;
+    z-index: 2;
+    width: 20px;
+    color: #28104e;
+}
+.header #search{
+    color: #28104e;
+}
+.header input{
+    position: fixed;
+    left: 20%;
+    height: 45px;
+    width: 40%;
+    color: #28104e;
+    border: none;
+    background-color: #d9d9d9;
+    padding-left: 50px;
+    border-radius: 10px;
+}
+.header .input:focus{
+    border: yellow 3px solid;
+}
+.header input::placeholder{
+    color: #28104e;
+    font-weight: 100;
+    font-size: 16px;
+    padding-left: 7px;
+}
+
+.ikon .cart-logo img {
+    position: absolute;
+    right: 32%;
+    top: 37px;
+    width: 35px;
+}
+.ikon .lope-logo img{
+    position: absolute;
+    right: 26%;
+    top: 37px;
+    width: 35px;
+}
+.ikon .lope-logo i:hover, .cart-logo i:hover{
+    color: #9754cb;
+}
+.button-header{
+    display: none;
+}
+/* tombol login-register */
+.button-header button#log  {
+    position: absolute;
+    right: 13%;
+    top: 22%;
+    padding: 10px 26px;
+    border: #9754cb 3px solid;
+    border-right: none;
+    border-radius: 10px 0px 0px 10px;
+    background-color: transparent;
+}
+.button-header button#reg  {
+    position: absolute;
+    right: 7.5%;
+    top: 22%;
+    padding: 10px 20px;
+    background-color: #9754cb;
+    border-radius: 0px 10px 10px 0px;
+    border: #9754cb 3px solid;
+}
+.button-header button#log a{
+    text-decoration: none;
+    font-size: 16px;
+    color: #28104e;
+}
+.button-header button#log:hover{
+    background-color: #deacf5;
+}
+.button-header button#reg a{
+    text-decoration: none;
+    font-size: 16px;
+    color: #28104e;
+}
+.button-header button#reg:hover{
+    background-color: transparent;
+}
+
+/* hamburger menu */
+.hamburger_menu{
+    display: flex;
+    flex-direction: column;
+    height: 30px;
+    justify-content: space-between;
+    position: absolute;
+    margin-left: 85%;
+    /* background-color: aqua; */
+}
+.hamburger_menu span{
+    background-color: #28104e;
+    display: block;
+    flex-direction: column;
+    position: relative;
+    width: 35px;
+    height: 3px;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+.hamburger_menu #input{
+   position: absolute;
+   width: 28px;
+   height: 25px;
+   opacity: 0;
+}
+/* animasi hamburger_menu*/
+.hamburger_menu span:nth-child(2){
+    transform-origin: 0 0;
+}
+.hamburger_menu span:nth-child(4){
+    transform-origin: 0 100%;
+}
+.hamburger_menu input:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(5px, -2px);
+}
+.hamburger_menu input:checked ~ span:nth-child(3){
+    transform: translatex(-50px);
+    opacity: 0;
+}
+.hamburger_menu input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg) translate(3px, 2px);
+}
+
+.menu{
+    background-color: #9754cb;
+    height: 40vh;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    list-style: none;
+    border-radius: 0px 0px 20px 20px ;
+    justify-content: center;
+    z-index: 100;
+    transform: translateY(100%);
+    transition: all 1s;
+    display: none;
+}
+
+.menu a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+    margin-left: 5%;
+}
+.showMenu{
+    list-style: none;
+    background-color: #deacf5;
+    height: 40vh;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-radius:30px 30px 0px 0px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 100;
+    transition: all 1s ease-in-out;
+    transform: translateY(-1%);
+}
+
+
+/* kategori */
+.kategori {
+    position: absolute;
+    z-index: 1;
+    top: 90px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    display: grid;
+    grid-auto-flow: column;
+    scroll-behavior: auto;
+    gap: 4%;
+    align-items: center;
+    overflow-y: auto;
+    overscroll-behavior: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: mandatory;
+    scrollbar-width: none;
+    padding: 3%;
+    -ms-overflow-style: none;
+}
+.kategori::-webkit-scrollbar{
+    display: none;
+}
+.kategori button{
+    border: none;
+    background: none;
+    /* width: 50%; */
+    height: 42px;
+    gap: 14px;
+    padding: 2px 20px 2px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.kategori a{
+    display: flex;
+    text-decoration: none;
+    color: #28104e;
+    font-size: 15px;
+}
+.kategori button img{
+    width: 30px;
+}
+
+.kategori button:hover{
+    background-color: #deacf5;
+    width: 80%;
+    border-radius: 20px;
+    transform: translatex(-8px);
+    box-shadow: 0px 10px 40px rgba(191, 141, 214 20%);
+    transition: all 0.6s;
+}
+
+.tab-nav nav{
+    display: none;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 75px;
+    z-index: 99;
+    background-color: #f7f7f8;
+}
+
+.tab-nav nav ul{
+    display: inline-flex;
+    list-style: none;
+    position: absolute;
+    gap: 400%;
+}
+
+.tab-nav nav ul li a img{
+    color: #fff;
+    text-decoration: none;
+    z-index: 9999;
+    width: 30px;
+}
+.card{
+    margin-top: 25%;
+}
+.card ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    list-style: none;
+    gap: 30px;
+    margin-left: 13%;
+}
+.card ul li {
+    width: 200px;
+    padding: 12px;
+    border: #28104e 3px solid;
+    background-color: #f7f7f8;
+    border-radius: 10px;
+}
+.card ul li:hover{
+    width: 190px;
+}
+.card ul li img{
+    width: 120px;
+    margin-left: 50px;
+}
+@media screen and (max-width: 770px){
+}
+@media screen and (max-width: 600px){
+}
+@media screen and (max-width: 450px) {
+    .header{
+        height: 90px;
+        position: fixed;
+        box-sizing: border-box;
+    }
+    .button-header{
+        display: none;
+    }
+    .header img{
+        display: none;
+    }
+    .kategori{
+        top: 100px;
+    }
+    .hamburger_menu{
+        display: flex;
+    }
+    .header .search {
+        left: 5%;
+        display: block;
+    }
+    .header input{
+        left: 5%;
+        width: 65%;
+    }
+    .header .ikon{
+        display: none;
+    }
+    .button-header .reg, .log{
+        display: none;
+    }
+    .menu{
+        display: flex;
+        overflow: hidden;
+    }
+    .kategori article {
+        width: 95px;
+    }
+    .tab-nav nav{
+        display: flex;
+        justify-content: center;
+    }
+    .tab-nav nav ul{
+        display: flex;
+        justify-content: center;
+        gap: 85%;
+    }
+    .tab-nav nav ul li a{
+        font-size: 18px;
+        font-weight: 300;
+    }
+    .card{
+        margin-top: 55%;
+    }
+} 
