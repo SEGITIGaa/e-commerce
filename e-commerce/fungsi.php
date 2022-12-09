@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect('localhost','root','','shop');
+$conn = mysqli_connect('localhost','root','','tokoAing');
 
 // BISI ADA YANG MASUK
 if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
@@ -11,8 +11,8 @@ if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
         $url.= $_SERVER['REQUEST_URI'];    
     }
 
-    if( $url === "http://localhost/shopman/fungsi.php"){
-        header("Location:index.php");
+    if( $url === "http://localhost/e-commerce/e-commerce/fungsi.php"){
+        header("Location:login/login.php");
         exit();
     }
 
@@ -191,13 +191,24 @@ function editKomentar($data){
 
 }
 
-function daftar($data){
+function register($data){
     global $conn;
-    $username = strtolower( stripslashes($data["username"]) );
+    $username = ( stripslashes($data["username"]) );
+    $gmail = $data["email"];
     $password = mysqli_real_escape_string($conn,$data["password"] );
-    $password2 = $data["password2"];
+    $password2 = $data["conpass"];
 
     $result = mysqli_query($conn,"SELECT * FROM user WHERE nama = '$username' ");
+    $cekGmail = mysqli_query($conn,"SELECT * FROM user WHERE gmail = '$gmail' ");
+
+    if(mysqli_fetch_assoc($cekGmail) ){
+        echo 
+        "<script>
+            alert('gmail sudah ada')
+        </script>
+        ";
+        return false;
+    }
 
     if(mysqli_fetch_assoc($result)){
         echo "
@@ -218,7 +229,7 @@ function daftar($data){
     $idUser = uniqid();
     $password = password_hash($password,PASSWORD_DEFAULT);
 
-    mysqli_query($conn,"INSERT INTO user VALUES('$idUser','$username','$password')");
+    mysqli_query($conn,"INSERT INTO user VALUES('$idUser','$username','$gmail','$password')");
 
     return mysqli_affected_rows($conn);
 
