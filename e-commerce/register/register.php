@@ -67,7 +67,7 @@
            </a>
       </button>
 
-        <h1 class="text-5xl text-2810 font-SO mt-32 ml-28 ">Selamat datang di Tokonuaing!!</h1>
+        <h1 class="text-5xl text-2810 font-SO mt-14 ml-28 ">Selamat datang di Tokonuaing!!</h1>
         <p class=" ml-28 mt-9">E-commece ter the best di Jawa</p>
     <img src="./../img/Tablet login-amico.png" alt="" class="w-1/4 absolute left-1/4 top-1/3">
     <!-- container -->
@@ -75,23 +75,23 @@
            
             <form action="" method="post" class="flex w-full justify-center flex-col p-14 absolute bottom-0 top-0" >
                 <div class="w-full">
-                    <h1 class="font-Rt flex justify-center mb-4 text-4xl   ">
+                    <h1 class="font-Rt flex justify-center mb-14 text-4xl   ">
                         Sign Up
                 </h1>
-               <div class="flex flex-col space-y-6">
+               <div class="flex flex-col space-y-4">
                  <!-- usr name -->
                  <input type="text" name="username" id="username" placeholder="username"  required autocomplete="off" 
-                 class="border-2 border-white w-full p-3 m-1 rounded-lg 
+                 class="border-2 border-white w-full p-2 m-1 rounded-lg 
                  bg-none outline-none focus:border-9754 focus:border-2">
                  <!-- email -->
                  <div class="group h-14">
-                     <input type="email" name="email" id="email" placeholder="email" autocomplete="off" class=" border-2 border-white w-full p-3 m-1 rounded-lg bg-none focus:outline-none focus:border-9754 focus:border-2 invalid:text-red-500 focus:invalid:border-red-500 peer">
+                     <input type="email" name="email" id="email" placeholder="email" autocomplete="off" class=" border-2 border-white w-full p-2 m-1 rounded-lg bg-none focus:outline-none focus:border-9754 focus:border-2 invalid:text-red-500 focus:invalid:border-red-500 peer">
                          <p class="mx-3 my-1 text-xs text-red-500 invisible peer-invalid:visible">Email invalid </p>
                      </div>
                  <!-- pass -->
                  <div class="group">
                   <input type="password" name="password" id="pwd" placeholder="password" required autocomplete="off"
-                         class="border-2 border-white w-full p-3 m-1 rounded-lg 
+                         class="border-2 border-white w-full p-2 m-1 rounded-lg 
                          bg-none outline-none focus:border-9754 focus:border-2 peer">
                      <img src="./../img/icons8-eye-24.png" alt="" id="lock" class="z-[2] w-6 absolute right-4 -mt-10 mr-12 invisible peer-focus:visible" >
                          <input type="checkbox" onclick="hideAndShow()" class=" opacity-0 absolute w-[30px] h-[30px] right-4 -mt-10 mr-12 z-30">
@@ -99,13 +99,13 @@
                     </div>
                      <!-- confirm pass -->
                      <input type="password" name="conpass" id="conass"placeholder=" confirm password" required autocomplete="off"
-                     class="border-2 border-white w-full p-3 m-1 rounded-lg 
+                     class="border-2 border-white w-full p-2 m-1 rounded-lg 
                      bg-none outline-none focus:border-9754 focus:border-2">
                      
                      <!-- button -->
                      <button type="submit" name="submit" 
                      class="flex justify-center items-center 
-                     w-1/3 mt-6 py-2 rounded-full bg-2810 text-deac 
+                     w-1/3 mt-7 py-2 rounded-full bg-2810 text-deac 
                      hover:bg-deac hover:text-2810 hover:sadow-lg 
                      hover:shadow-violet-200">
                     confirm

@@ -48,6 +48,9 @@ $produk = ambil("SELECT * FROM produk");
                 padding: 0;
                 font-family: 'Poppins', sans-serif;
             }
+            *::-webkit-scrollbar{
+                display: none;
+            }
         </style>
          <script>
             tailwind.config = {
@@ -76,11 +79,13 @@ $produk = ambil("SELECT * FROM produk");
             }
           </script>
     </head>
-    <body class="overflow-y-hidden ">
+    <body class="overflow-x-hidden ">
         <!-- header -->
-        <div class=" flex items-center fixed w-full h-24 bg-f4f8">
+        <div class=" flex items-center fixed w-full h-24 bg-f4f8 z-40">
 
-            <img src="../img/homepage-logo.png" alt="" class="ml-9 mr-4 w-40">
+         <a href="./../homepage/index.php">
+         <img src="../img/homepage-logo.png" alt="" class="ml-9 mr-4 w-40">
+         </a>
 
             <!-- search bar & icon -->
 
@@ -100,35 +105,35 @@ $produk = ambil("SELECT * FROM produk");
             </a>
             
             <!-- profile -->
-            <?php // if($_SESSION["login"] === true) : ?>  
+            <?php if($_SESSION["login"] === true) : ?>  
             <div class="w-11 absolute right-20">
                <a href="profile.html">
                 <img src="./../img/casual-life-3d-profile-picture-of-man-in-green-shirt-and-orange-hat.png" alt="">
                </a>
             </div>
-            <?php // endif ; ?>
+            <?php endif ; ?>
 
             <!-- login & register -->
             <?php if($_SESSION["login"] === false) : ?>  
                 <div class="absolute right-20 flex">
-                    <button class="bg-deac py-2 px-3 rounded-l-xl hover:bg-deac hover:shadow-md hover:shadow-violet-300" >
+                    <button class="border-4 border-9754 py-2 px-3 mr-2 rounded-xl font-bold text-9754 hover:shadow-md hover:shadow-violet-300" >
                         <a href="../login/login.php">Login</a>
                     </button>
-                    <button class="py-2 px-1 bg-9754 border-9754 border-4 rounded-r-xl">
+                    <button class="py-2 px-1 bg-9754 border-9754 font-bold text-f4f8 border-4 rounded-xl hover:shadow-md hover:shadow-violet-300">
                         <a href="../register/register.php">Sign Up</a>
                     </button>
                 </div>
             <?php endif ; ?>
 
-            <div class="hamburger_menu">
+            <!-- <div class="hamburger_menu">
                 <input type="checkbox" name="" id="input" onclick="popup()">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </div> -->
         </div>
 
-        <div class="absolute top-28 left-0 right-0 bg-d9d9 border-2 z-10 grid grid-flow-col scroll-auto overflow-y-auto overscroll-auto overscroll-x-contain snap-mandatory p-8 gap-14">
+        <div class="absolute top-28 left-0 right-0 bg-d9d9 z-10 grid grid-flow-col scroll-auto overflow-y-auto overscroll-auto overscroll-x-contain snap-mandatory p-8 gap-14 ">
             <a href="./../kategori/kategori.html" class="text-2810 text-sm">
                 <button class="flex py-1 px-5 justify-center items-center gap-4 hover:bg-deac hover:rounded-full">
                     <img class="w-8" src="./../img/icons8-buying-64.png" alt="">
@@ -181,26 +186,53 @@ $produk = ambil("SELECT * FROM produk");
 
         <div class="">
         <h1 class="absolute top-2/3 left-44 text-2xl font-extrabold">Recomended</h1>
-        <ul class="produk">
+        <ul class="flex justify-center gap-28 absolute top-3/4 left-0 right-0 flex-wrap">
             <?php foreach($produk as $produknya) : ?>
             <li>
-                <div class="isi">
+                <div class="w-40 h-50 bg-f4f8 flex rounded-lg container shadow-md shadow-slate-400 overflow-hidden">
                     <a href="produk.php?id=<?= $produknya["id"] ?>">
-                        <img src="img/<?= $produknya["img"] ?>">
-                        <h4 ><?= $produknya["namaProduk"] ?></h4>
-                        <h3>💰 <?= $produknya["hargaProduk"] ?></h3>
+                        <img src="./../img/durek.jfif" class="w-40">
+                        <h4 class="pt-2 font-semibold text-slate-800 text-lg p-2 " >Permen mint</h4>
+                        <h3 class="pl-2 text-sm">nama toko</h3>
+                        <h3 class="text-slate-600 mb-6 p-2 flex gap-2 font-semibold">
+                        <img src="./../img/icons8-price-tag-48.png" alt="" class="w-5">    
+                        12.000
+                        </h3>
+                        
+                        <img src="./../img/icons8-heart-50.png" alt="" class="w-5 absolute bottom-3 ml-28">
                     </a>
                 </div>
             </li>
             <li>
-                <div class="isi">
+                <div class="w-40 h-50 bg-f4f8 flex rounded-lg container shadow-md shadow-slate-400 overflow-hidden">
                     <a href="produk.php?id=<?= $produknya["id"] ?>">
-                        <img src="img/<?= $produknya["img"] ?>">
-                        <h4 ><?= $produknya["namaProduk"] ?></h4>
-                        <h3>💰 <?= $produknya["hargaProduk"] ?></h3>
+                        <img src="./../img/durek.jfif" class="w-40">
+                        <h4 class="pt-2 font-semibold text-slate-800 text-lg p-2" >Permen mint</h4>
+                        <h3 class="pl-2 text-sm">nama toko</h3>
+                        <h3 class="text-slate-600 mb-6 p-2 flex gap-2 font-semibold">
+                        <img src="./../img/icons8-price-tag-48.png" alt="" class="w-5">    
+                        12.000
+                        </h3>
+                        
+                        <img src="./../img/icons8-heart-50.png" alt="" class="w-5 absolute bottom-3 ml-28">
                     </a>
                 </div>
-            </li>   
+            </li>
+            <li>
+                <div class="w-40 h-50 bg-f4f8 flex rounded-lg container shadow-md shadow-slate-400 overflow-hidden">
+                    <a href="produk.php?id=<?= $produknya["id"] ?>">
+                        <img src="./../img/durek.jfif" class="w-40">
+                        <h4 class="pt-2 font-semibold text-slate-800 text-lg p-2" >Permen mint</h4>
+                        <h3 class="pl-2 text-sm">nama toko</h3>
+                        <h3 class="text-slate-600 mb-6 p-2 flex gap-2 font-semibold">
+                        <img src="./../img/icons8-price-tag-48.png" alt="" class="w-5">    
+                        12.000
+                        </h3>
+                        
+                        <img src="./../img/icons8-heart-50.png" alt="" class="w-5 absolute bottom-3 ml-28">
+                    </a>
+                </div>
+            </li>
             
             <?php endforeach ; ?>
         </ul>
